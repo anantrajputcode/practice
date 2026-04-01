@@ -1,15 +1,18 @@
 #include <stdio.h>
-int main()
 struct node{
     int data;
-    struct node* next;
+    struct node* link;
 };
+int main()
 {
-    printf("enter the nof elements : ");
-    int n;
-    scanf("%d", &n);
-    struct node head;
-    struct node second;
-    head -> next = &second;
+    struct node* head = NULL;
+    head = (struct node*) malloc(sizeof(struct node));
+    head -> data = 10;
+    head -> link = NULL;
+    struct node* current = (struct node* )malloc(sizeof(struct node));
+    current -> data = 23;
+    current -> link = NULL;
+    head -> link = current;
+    
     return 0;
 }
