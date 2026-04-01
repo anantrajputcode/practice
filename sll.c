@@ -17,6 +17,19 @@ int count_nodes(struct node* head){
     }
     return count;
 }
+void print_data(struct node* head){
+    if(head == NULL){
+        printf("Linked list is empty.");
+    }
+    struct node* ptr = head;
+    while(ptr != NULL){
+        printf("%d->", ptr->data);
+        ptr = ptr->link;
+        if(ptr == NULL){
+            printf("NULL");
+        }
+    }
+}
 int main()
 {
     struct node* head = NULL;
@@ -34,8 +47,9 @@ int main()
     current -> link = NULL;
     head -> link ->link = current;
 
-    int count = count_nodes(head);
-    printf("No of nodes = %d", count);
+    //int count = count_nodes(head);
+   //printf("No of nodes = %d", count);
+   print_data(head);
     
     return 0;
 }
