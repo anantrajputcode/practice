@@ -1,8 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 struct node{
     int data;
     struct node* link;
 };
+int count_nodes(struct node* head){
+    int count = 0;
+    if(head == NULL){
+        printf("linked list is empty.");
+    }
+    
+    struct node* ptr = head;
+    while (ptr != NULL){
+        count++;
+        ptr = ptr->link;
+    }
+    return count;
+}
 int main()
 {
     struct node* head = NULL;
@@ -19,6 +33,9 @@ int main()
     current -> data = 343;
     current -> link = NULL;
     head -> link ->link = current;
+
+    int count = count_nodes(head);
+    printf("No of nodes = %d", count);
     
     return 0;
 }
