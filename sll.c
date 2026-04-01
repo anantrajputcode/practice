@@ -9,10 +9,16 @@ int main()
     head = (struct node*) malloc(sizeof(struct node));
     head -> data = 10;
     head -> link = NULL;
+    
     struct node* current = (struct node* )malloc(sizeof(struct node));
     current -> data = 23;
     current -> link = NULL;
     head -> link = current;
+    
+    current = malloc(sizeof(struct node));
+    current -> data = 343;
+    current -> link = NULL;
+    head -> link ->link = current;
     
     return 0;
 }
