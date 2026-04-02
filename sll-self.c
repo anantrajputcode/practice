@@ -30,6 +30,9 @@ int main()
     while (ptr != NULL){
         printf("%d=>", ptr->data);
         ptr = ptr->link;
+        if(ptr == NULL){
+            printf("NULL");
+        }
     }
     return 0;
 }
