@@ -43,6 +43,13 @@ void inset_at_end(struct node* head){
     printf("the list after insertion is : \n");
     print_data(head);
 }
+struct node* insert_at_begining(struct node* head, int data){
+    struct node* ptr = malloc(sizeof(struct node));
+    ptr->data = data;
+    ptr->link = head;
+    head = ptr;
+    return head;
+}
 int main()
 {
     struct node* head = NULL;
@@ -66,6 +73,9 @@ int main()
    print_data(head);
    printf("\n");
    inset_at_end(head);
+   printf("\n");
+   head = insert_at_begining(head, 22332);
+   print_data(head);
    
     
     return 0;
