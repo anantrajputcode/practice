@@ -30,6 +30,19 @@ void print_data(struct node* head){
         }
     }
 }
+void inset_at_end(struct node* head){
+    struct node* ptr = head;
+    struct node* temp = malloc (sizeof(struct node));
+    printf("enter the data to insert at end: ");
+    scanf("%d", &temp->data);
+    temp->link = NULL;
+    while(ptr->link != NULL){
+        ptr = ptr->link;
+    }
+    ptr->link = temp;
+    printf("the list after insertion is : \n");
+    print_data(head);
+}
 int main()
 {
     struct node* head = NULL;
@@ -49,7 +62,11 @@ int main()
 
     //int count = count_nodes(head);
    //printf("No of nodes = %d", count);
+   printf("original list is: \n");
    print_data(head);
+   printf("\n");
+   inset_at_end(head);
+   
     
     return 0;
 }
