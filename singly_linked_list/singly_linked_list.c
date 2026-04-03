@@ -38,6 +38,12 @@ void insert_at_end(struct node* head, int data){
     ptr-> link = temp;
 
 }
+struct node* insert_at_begin(struct node* head, int data){
+    struct node* temp = malloc(sizeof(struct node));
+    temp-> data = data;
+    temp-> link = head;
+    return temp; 
+}
 int main(){
     printf("Enter the no of nodes you want in the sll : ");
     int n;
@@ -55,5 +61,9 @@ int main(){
     scanf("%d", &data);
     insert_at_end(head, data);
     print_data(head);
+    head = insert_at_begin(head, data);
+    printf("\n");
+    print_data(head);
+
     
 }
