@@ -21,11 +21,22 @@ struct node* create_node(struct node* head, int data){
 void print_data(struct node* head){
     struct node* temp = NULL;
     temp = head;
-    while (temp-> link != NULL){
+    while (temp != NULL){
         printf("%d->", temp-> data);
         temp = temp-> link;
     }
     printf("NULL");
+}
+void insert_at_end(struct node* head, int data){
+    struct node* temp = malloc(sizeof(struct node));
+    temp-> data = data;
+    temp-> link = NULL;
+    struct node* ptr = head;
+    while(ptr-> link != NULL){
+        ptr = ptr-> link;
+    }
+    ptr-> link = temp;
+
 }
 int main(){
     printf("Enter the no of nodes you want in the sll : ");
@@ -40,4 +51,9 @@ int main(){
     }
     printf("The data stored in sll is :-\n");
     print_data(head);
+    printf("\nEnter the data for new node: ");
+    scanf("%d", &data);
+    insert_at_end(head, data);
+    print_data(head);
+    
 }
