@@ -44,6 +44,19 @@ struct node* insert_at_begin(struct node* head, int data){
     temp-> link = head;
     return temp; 
 }
+void inser_at_position(struct node* head, int pos, int data){
+    struct node* temp = malloc(sizeof(struct node));
+    temp->data = data;
+    temp-> link = NULL;
+    struct node* ptr = head;
+    int count = 1;
+    while(count < pos-1){
+        ptr= ptr-> link;
+        count++;
+    }
+    temp-> link = ptr-> link;
+    ptr-> link = temp;
+}
 int main(){
     printf("Enter the no of nodes you want in the sll : ");
     int n;
@@ -64,6 +77,9 @@ int main(){
     head = insert_at_begin(head, data);
     printf("\n");
     print_data(head);
-
-    
+    printf("\n");
+    inser_at_position(head, 4, data);
+    print_data(head);
+    printf("\n");
+    return 0;
 }
