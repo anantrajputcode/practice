@@ -18,6 +18,15 @@ struct node* create_node(struct node* head, int data){
     temp-> link = new_node;
     return head;
 }
+void print_data(struct node* head){
+    struct node* temp = NULL;
+    temp = head;
+    while (temp-> link != NULL){
+        printf("%d->", temp-> data);
+        temp = temp-> link;
+    }
+    printf("NULL");
+}
 int main(){
     printf("Enter the no of nodes you want in the sll : ");
     int n;
@@ -29,5 +38,6 @@ int main(){
         scanf("%d", &data);
         head = create_node(head, data);
     }
-
+    printf("The data stored in sll is :-\n");
+    print_data(head);
 }
